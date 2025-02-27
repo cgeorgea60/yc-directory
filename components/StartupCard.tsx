@@ -38,19 +38,19 @@ const StartupCard = ({post}:{post:StartupTypeCard}) => {
             </div>
             <Link href={`/user/${post?.author?._id}`}>
                 <Image 
-                 src={post.author?.image!} alt={post?.author?.name!} 
+                 src={post?.author?.image!} alt={post?.author?.name!} 
                  width={48} height={48} className='rounded-full' 
                 />
             </Link>
         </div>
-        <Link href={`/startup/${post._id}`}>
+        <Link href={`/startup/${post?._id}`}>
             <p className='startup-card_desc'>
                 {post?.description}
             </p>
-            <img src={post.image} alt='placholder' className='startup-card_img' />
+            <img src={post?.image} alt='placholder' className='startup-card_img' />
         </Link>
         <div className='flex-between gap-3 mt-5'>
-            <Link href={`/?query=${post.category?.toLowerCase()}`}>
+            <Link href={`/?query=${post?.category?.toLowerCase()}`}>
                 <p className='text-16-medium'>
                     {post?.category}
                     </p>
